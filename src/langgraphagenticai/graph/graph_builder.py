@@ -61,9 +61,9 @@ class GraphBuilder:
         ai_news_node=AINewsNode(self.llm)
 
         ## added the nodes
-        self.graph_builder.add_node("fetch_news","")
-        self.graph_builder.add_node("summarize_news","")
-        self.graph_builder.add_node("save_result","")
+        self.graph_builder.add_node("fetch_news",ai_news_node.fetch_news)
+        self.graph_builder.add_node("summarize_news",ai_news_node.summarize_news)
+        self.graph_builder.add_node("save_result",ai_news_node.save_result)
 
         # added the edges
         self.graph_builder.set_entry_point("fetch_news")
@@ -80,6 +80,8 @@ class GraphBuilder:
             self.basic_chatbot_build_graph()
         if usecase == "Chatbot With Web":
             self.chatbot_with_tools_build_graph()
+        if usecase == "AI News":
+            self.ai_news_builder_graph()
 
         return self.graph_builder.compile()
 
