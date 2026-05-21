@@ -5,7 +5,7 @@ from src.langgraphagenticai.nodes.basic_chatbot_node import BasicChatbotNode
 from src.langgraphagenticai.tools.search_tool import get_tools,create_tool_node
 from langgraph.prebuilt import tools_condition,ToolNode
 from src.langgraphagenticai.nodes.chatbot_with_Tool_node import ChatbotWithToolNode
-
+from src.langgraphagenticai.nodes.ai_news_node import AINewsNode
 
 class GraphBuilder:
     def __init__(self,model):
